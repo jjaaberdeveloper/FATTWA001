@@ -9,7 +9,9 @@ public class ToggleAudioButton : MonoBehaviour
     public Image buttonImage;              // Reference to the Image component on the Button
     public Sprite playIcon;                // The play icon sprite
     public Sprite pauseIcon;               // The pause icon sprite
-    private bool isPlaying = false;        // Tracks whether the audio is currently playing
+
+    private static AudioSource currentlyPlayingAudio = null; // Static variable to track the currently playing audio
+    private static ToggleAudioButton currentlyActiveButton = null; // Static variable to track the currently active button
 
     void Start()
     {
@@ -22,16 +24,50 @@ public class ToggleAudioButton : MonoBehaviour
 
     void ToggleAudio()
     {
-        if (isPlaying)
+        // If this audio is already playing, stop it
+        if (currentlyPlayingAudio == audioSource)
         {
-            audioSource.Stop();            // Stop the audio if it is playing
-            buttonImage.sprite = playIcon; // Change to play icon
+            StopAudio();
         }
         else
         {
-            audioSource.Play();            // Play the audio if it is not playing
-            buttonImage.sprite = pauseIcon; // Change to pause icon
+            // Stop the currently playing audio if any
+            if (currentlyPlayingAudio != null)
+            {
+                currentlyActiveButton.StopAudio();
+            }
+
+            // Play this audio
+            PlayAudio();
         }
-        isPlaying = !isPlaying;            // Toggle the state
+    }
+
+    void PlayAudio()
+    {
+        audioSource.Play();            // Play the audio
+        buttonImage.sprite = pauseIcon; // Change to pause icon
+
+        // Update the static references
+        currentlyPlayingAudio = audioSource;
+        currentlyActiveButton = this;
+    }
+
+    void StopAudio()
+    {
+        audioSource.Stop();            // Stop the audio
+        buttonImage.sprite = playIcon; // Change to play icon
+
+        // Reset the static references
+        if (currentlyPlayingAudio == audioSource)
+        {
+            currentlyPlayingAudio = null;
+            currentlyActiveButton = null;
+        }
+    }
+
+    // Method to update the button icon when stopping an audio from another button
+    public void UpdateButtonIcon(bool playing)
+    {
+        buttonImage.sprite = playing ? pauseIcon : playIcon;
     }
 }

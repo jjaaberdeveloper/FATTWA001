@@ -3286,13 +3286,13 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1259507610}
-    - targetCorrespondingSourceObject: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1769375937}
     - targetCorrespondingSourceObject: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1670507882}
+    - targetCorrespondingSourceObject: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1259507610}
     - targetCorrespondingSourceObject: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       insertIndex: -1
       addedObject: {fileID: 556815825}
@@ -8061,6 +8061,7 @@ GameObject:
   - component: {fileID: 1259507611}
   - component: {fileID: 1259507613}
   - component: {fileID: 1259507615}
+  - component: {fileID: 1259507616}
   m_Layer: 5
   m_Name: Text (pg7)
   m_TagString: Untagged
@@ -8077,7 +8078,7 @@ RectTransform:
   m_GameObject: {fileID: 1259507609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.7785492, y: 3.6846392, z: 3.6846392}
+  m_LocalScale: {x: 18.926023, y: 20.75994, z: 15.492489}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1426872503}
@@ -8085,7 +8086,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 285, y: 252}
+  m_AnchoredPosition: {x: 285, y: 249.35535}
   m_SizeDelta: {x: 1942.2999, y: 1080}
   m_Pivot: {x: 0.5, y: 0.48}
 --- !u!114 &1259507611
@@ -8325,6 +8326,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1259507616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259507609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a720b755690a6974392fdf4f7ef17c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookController: {fileID: 1007772761}
+  interactableTextButton: {fileID: 1259507615}
+  targetPageNumber: 12
 --- !u!1 &1278963087
 GameObject:
   m_ObjectHideFlags: 0
@@ -11311,7 +11327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 209, y: 1880}
+  m_AnchoredPosition: {x: 196, y: 1861}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2119140845

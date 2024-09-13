@@ -24,4 +24,10 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("AlbumScene");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        
+    }
 }
