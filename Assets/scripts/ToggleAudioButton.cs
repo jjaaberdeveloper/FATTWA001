@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class ToggleAudioButton : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class ToggleAudioButton : MonoBehaviour
     public Image buttonImage;              // Reference to the Image component on the Button
     public Sprite playIcon;                // The play icon sprite
     public Sprite pauseIcon;               // The pause icon sprite
+
+    public VideoPlayer videoPlayer;        // Reference to the VideoPlayer component for the .webm animation
 
     private static AudioSource currentlyPlayingAudio = null; // Static variable to track the currently playing audio
     private static ToggleAudioButton currentlyActiveButton = null; // Static variable to track the currently active button
@@ -20,6 +23,12 @@ public class ToggleAudioButton : MonoBehaviour
 
         // Set the initial button image to the play icon
         buttonImage.sprite = playIcon;
+
+        // Make sure the video is not playing initially
+        if (videoPlayer != null)
+        {
+            videoPlayer.Stop();
+        }
     }
 
     void ToggleAudio()
@@ -47,6 +56,12 @@ public class ToggleAudioButton : MonoBehaviour
         audioSource.Play();            // Play the audio
         buttonImage.sprite = pauseIcon; // Change to pause icon
 
+        // Play the animation
+        if (videoPlayer != null)
+        {
+            videoPlayer.Play();
+        }
+
         // Update the static references
         currentlyPlayingAudio = audioSource;
         currentlyActiveButton = this;
@@ -56,6 +71,12 @@ public class ToggleAudioButton : MonoBehaviour
     {
         audioSource.Stop();            // Stop the audio
         buttonImage.sprite = playIcon; // Change to play icon
+
+        // Stop the animation
+        if (videoPlayer != null)
+        {
+            videoPlayer.Stop();
+        }
 
         // Reset the static references
         if (currentlyPlayingAudio == audioSource)
