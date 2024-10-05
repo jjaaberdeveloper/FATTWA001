@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/FlipbookScene.unity
     guid: b5ea4a9f279d37740b3ef34f42035098
   - enabled: 1
-    path: Assets/Scenes/AlbumScene.unity
-    guid: 792ea3a9bcdb35a4cad75c0b37afd305
+    path: Assets/Scenes/AlbumSceneWithMediaPlayer.unity
+    guid: b693f25859acaf640b5b561d5b8cabd0
   m_configObjects: {}

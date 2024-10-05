@@ -22,7 +22,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadAlbumScene()
     {
-        SceneManager.LoadScene("AlbumScene");
+        SceneManager.LoadScene("AlbumSceneWithMediaPlayer");
     }
 
     public void QuitGame()

@@ -2,93 +2,229 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Video;
+using UnityEngine.Timeline;
 
 public class ToggleAudioButton : MonoBehaviour
 {
-    public AudioSource audioSource;        // Reference to the AudioSource component
-    public Image buttonImage;              // Reference to the Image component on the Button
-    public Sprite playIcon;                // The play icon sprite
-    public Sprite pauseIcon;               // The pause icon sprite
+    public List<AudioClip> audioClips;         // List of audio tracks
+    public AudioSource audioSource;            // Reference to the AudioSource component
+    public Image playPauseButtonImage;         // Reference to the Play/Pause button image
+    public Sprite playIcon;                    // Play icon sprite
+    public Sprite pauseIcon;                   // Pause icon sprite
+    public GameObject mediaPlayerPanel;        // Reference to the media player panel
+    public TextMeshProUGUI trackNameText;      // Reference to the track name text
+    public Slider progressBar;                 // Reference to the progress bar
+    public VideoPlayer soundbarAnimation;      // VideoPlayer for the soundbar animation
+    public Button closeButton;                 // Reference to the close button
+    public Button skipForwardButton;           // Reference to the skip forward button
+    public Button skipBackwardButton;          // Reference to the skip backward button
 
-    public VideoPlayer videoPlayer;        // Reference to the VideoPlayer component for the .webm animation
-
-    private static AudioSource currentlyPlayingAudio = null; // Static variable to track the currently playing audio
-    private static ToggleAudioButton currentlyActiveButton = null; // Static variable to track the currently active button
+    private bool isPlaying = false;            // Tracks whether audio is playing
+    private bool isDragging = false;           // Tracks if the progress bar is being dragged
+    private int currentTrackIndex = 0;         // Tracks the current playing track index
+    private bool isSkipping = false;           // Prevents double skipping
 
     void Start()
     {
-        // Get the Button component on this GameObject and add a listener to it
-        GetComponent<Button>().onClick.AddListener(ToggleAudio);
-
-        // Set the initial button image to the play icon
-        buttonImage.sprite = playIcon;
-
-        // Make sure the video is not playing initially
-        if (videoPlayer != null)
+        // Ensure mediaPlayerPanel is inactive initially
+        if (mediaPlayerPanel != null)
         {
-            videoPlayer.Stop();
+            mediaPlayerPanel.SetActive(false);
+        }
+
+        // Assign button listeners
+        GetComponent<Button>().onClick.AddListener(ToggleAudio);
+        skipForwardButton.onClick.AddListener(SkipForward);
+        skipBackwardButton.onClick.AddListener(SkipBackward);
+        closeButton.onClick.AddListener(CloseMediaPlayer);
+
+        // Initialize the progress bar and its events
+        if (progressBar != null)
+        {
+            progressBar.onValueChanged.AddListener(OnProgressBarChanged);
+        }
+
+        // Ensure that the first track is set initially
+        SetTrack(0);
+    }
+
+    void Update()
+    {
+        if (isPlaying && !isDragging)
+        {
+            // Update the progress bar based on the audio playback time
+            progressBar.value = audioSource.time / audioSource.clip.length;
+
+            // Automatically skip to the next track when the current track finishes
+            if (!audioSource.isPlaying && audioSource.time >= audioSource.clip.length)
+            {
+                SkipForward();
+            }
         }
     }
 
-    void ToggleAudio()
+    public void ToggleAudio()
     {
-        // If this audio is already playing, stop it
-        if (currentlyPlayingAudio == audioSource)
+        // Ensure the media player always opens with the first track
+        if (!mediaPlayerPanel.activeSelf)
         {
-            StopAudio();
+            SetTrack(0);  // Always start with the first track when opening the media player
+        }
+
+        if (isPlaying)
+        {
+            PauseAudio();
         }
         else
         {
-            // Stop the currently playing audio if any
-            if (currentlyPlayingAudio != null)
-            {
-                currentlyActiveButton.StopAudio();
-            }
-
-            // Play this audio
             PlayAudio();
         }
     }
 
     void PlayAudio()
     {
-        audioSource.Play();            // Play the audio
-        buttonImage.sprite = pauseIcon; // Change to pause icon
+        // Play the audio
+        audioSource.Play();
+        playPauseButtonImage.sprite = pauseIcon;
+        isPlaying = true;
 
-        // Play the animation
-        if (videoPlayer != null)
+        // Show the media player and update the track name
+        if (mediaPlayerPanel != null)
         {
-            videoPlayer.Play();
+            mediaPlayerPanel.SetActive(true);
+        }
+        if (trackNameText != null && audioSource.clip != null)
+        {
+            trackNameText.text = audioSource.clip.name;
         }
 
-        // Update the static references
-        currentlyPlayingAudio = audioSource;
-        currentlyActiveButton = this;
+        // Play the soundbar animation
+        if (soundbarAnimation != null)
+        {
+            soundbarAnimation.Play();
+        }
     }
 
-    void StopAudio()
+    public void PauseAudio()
     {
-        audioSource.Stop();            // Stop the audio
-        buttonImage.sprite = playIcon; // Change to play icon
+        // Pause the audio
+        audioSource.Pause();
+        playPauseButtonImage.sprite = playIcon;
+        isPlaying = false;
 
-        // Stop the animation
-        if (videoPlayer != null)
+        // Pause the soundbar animation
+        if (soundbarAnimation != null)
         {
-            videoPlayer.Stop();
-        }
-
-        // Reset the static references
-        if (currentlyPlayingAudio == audioSource)
-        {
-            currentlyPlayingAudio = null;
-            currentlyActiveButton = null;
+            soundbarAnimation.Pause();
         }
     }
 
-    // Method to update the button icon when stopping an audio from another button
-    public void UpdateButtonIcon(bool playing)
+    // Fast forward by 5 seconds
+    public void FastForward()
     {
-        buttonImage.sprite = playing ? pauseIcon : playIcon;
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.time = Mathf.Min(audioSource.time + 5f, audioSource.clip.length);
+        }
     }
+
+    // Rewind by 5 seconds
+    public void Rewind()
+    {
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.time = Mathf.Max(audioSource.time - 5f, 0f);
+        }
+    }
+
+    public void SkipForward()
+    {
+        if (isSkipping) return; // Prevent skipping again before the previous skip is done
+        isSkipping = true;
+
+        // Stop the current track
+        audioSource.Stop();
+
+        // Move to the next track, but don't exceed the list size
+        currentTrackIndex = (currentTrackIndex + 1) % audioClips.Count;
+
+        // Set and play the new current track
+        SetTrack(currentTrackIndex);
+        PlayAudio();
+
+        // Reset skipping flag after the new track starts playing
+        StartCoroutine(ResetSkippingFlag());
+    }
+
+    public void SkipBackward()
+    {
+        if (isSkipping) return; // Prevent skipping again before the previous skip is done
+        isSkipping = true;
+
+        // Stop the current track
+        audioSource.Stop();
+
+        // Move to the previous track, but don't go below 0
+        currentTrackIndex = (currentTrackIndex - 1 + audioClips.Count) % audioClips.Count;
+
+        // Set and play the new current track
+        SetTrack(currentTrackIndex);
+        PlayAudio();
+
+        // Reset skipping flag after the new track starts playing
+        StartCoroutine(ResetSkippingFlag());
+    }
+
+    private void SetTrack(int trackIndex)
+    {
+        if (trackIndex >= 0 && trackIndex < audioClips.Count)
+        {
+            audioSource.clip = audioClips[trackIndex];
+            trackNameText.text = audioClips[trackIndex].name;
+
+            // Reset the progress bar
+            progressBar.value = 0;
+        }
+        else
+        {
+            Debug.LogError("Track index out of bounds");
+        }
+    }
+
+    private IEnumerator ResetSkippingFlag()
+    {
+        yield return new WaitForSeconds(0.5f);  // Adjust delay to a reasonable time to prevent double skipping
+        isSkipping = false;
+    }
+
+    public void OnProgressBarChanged(float value)
+    {
+        if (audioSource != null && audioSource.clip != null && !isDragging)
+        {
+            audioSource.time = value * audioSource.clip.length;
+        }
+    }
+
+    void CloseMediaPlayer()
+    {
+        // Stop the audio and animation when the panel is closed
+        audioSource.Stop();
+        if (soundbarAnimation != null)
+        {
+            soundbarAnimation.Stop();
+        }
+
+        // Hide the media player panel
+        if (mediaPlayerPanel != null)
+        {
+            mediaPlayerPanel.SetActive(false);
+        }
+
+        // Reset play/pause icon to play state
+        playPauseButtonImage.sprite = playIcon;
+        isPlaying = false;
+    }
+
 }
