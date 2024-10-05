@@ -3757,7 +3757,7 @@ GameObject:
   - component: {fileID: 229972901}
   - component: {fileID: 229972902}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3836,22 +3836,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 503540603}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7135,8 +7123,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.6
-  m_fontSizeBase: 20.6
+  m_fontSize: 13.41
+  m_fontSizeBase: 13.41
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7433,7 +7421,7 @@ GameObject:
   - component: {fileID: 506872916}
   - component: {fileID: 506872917}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9611,7 +9599,7 @@ GameObject:
   - component: {fileID: 676485878}
   - component: {fileID: 676485879}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9690,22 +9678,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 2135466345}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9911,7 +9887,7 @@ GameObject:
   - component: {fileID: 715398990}
   - component: {fileID: 715398991}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10933,7 +10909,7 @@ GameObject:
   - component: {fileID: 832785294}
   - component: {fileID: 832785295}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12563,7 +12539,7 @@ GameObject:
   - component: {fileID: 933106606}
   - component: {fileID: 933106607}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13045,7 +13021,7 @@ GameObject:
   - component: {fileID: 956094236}
   - component: {fileID: 956094237}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13366,7 +13342,7 @@ GameObject:
   - component: {fileID: 965313846}
   - component: {fileID: 965313847}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16435,20 +16411,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 830825180}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17816,7 +17780,7 @@ GameObject:
   - component: {fileID: 1325369687}
   - component: {fileID: 1325369688}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17895,22 +17859,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 1901565614}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -18529,7 +18481,7 @@ GameObject:
   - component: {fileID: 1344882575}
   - component: {fileID: 1344882576}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18608,22 +18560,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 1962322739}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19005,7 +18945,7 @@ GameObject:
   - component: {fileID: 1416936814}
   - component: {fileID: 1416936815}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19084,22 +19024,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 1787486200}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23106,7 +23034,7 @@ GameObject:
   - component: {fileID: 1735385541}
   - component: {fileID: 1735385542}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23185,22 +23113,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 1089286055}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27554,7 +27470,7 @@ GameObject:
   - component: {fileID: 2062351136}
   - component: {fileID: 2062351137}
   m_Layer: 5
-  m_Name: ProgressBar
+  m_Name: ProgressBar4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27633,22 +27549,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 1806583486}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -29338,7 +29242,7 @@ PrefabInstance:
     - target: {fileID: 9033980357392625203, guid: ba1f71fc521ba494a880f3e4172db2f5, type: 3}
       propertyPath: progressBar
       value: 
-      objectReference: {fileID: 676485879}
+      objectReference: {fileID: 1416936815}
     - target: {fileID: 9033980357392625203, guid: ba1f71fc521ba494a880f3e4172db2f5, type: 3}
       propertyPath: videoPlayer
       value: 
@@ -29459,7 +29363,7 @@ PrefabInstance:
     - target: {fileID: 561733823405068799, guid: 5d6898165c8f23840bb3e12e37f4fa23, type: 3}
       propertyPath: progressBar
       value: 
-      objectReference: {fileID: 1416936815}
+      objectReference: {fileID: 1735385542}
     - target: {fileID: 561733823405068799, guid: 5d6898165c8f23840bb3e12e37f4fa23, type: 3}
       propertyPath: videoPlayer
       value: 
