@@ -3839,7 +3839,7 @@ MonoBehaviour:
       - m_Target: {fileID: 503540603}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
         m_MethodName: OnProgressBarChanged
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7500,22 +7500,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 829348072}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9681,7 +9669,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2135466345}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
         m_MethodName: OnProgressBarChanged
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9966,22 +9954,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 1861054655}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10988,22 +10964,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 1334572884}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12618,22 +12582,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 356759947}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13100,22 +13052,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 1602317347}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13421,22 +13361,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830825180}
+      - m_Target: {fileID: 1614618633}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 830825180}
-        m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
-        m_MethodName: OnProgressBarDragEnd
-        m_Mode: 1
+        m_MethodName: OnProgressBarChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16412,7 +16340,7 @@ MonoBehaviour:
       - m_Target: {fileID: 830825180}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
         m_MethodName: OnProgressBarChanged
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17862,7 +17790,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1901565614}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
         m_MethodName: OnProgressBarChanged
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -18563,7 +18491,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1962322739}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
         m_MethodName: OnProgressBarChanged
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19027,7 +18955,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1787486200}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
         m_MethodName: OnProgressBarChanged
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23116,7 +23044,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1089286055}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
         m_MethodName: OnProgressBarChanged
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27552,7 +27480,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1806583486}
         m_TargetAssemblyTypeName: ToggleAudioButton, Assembly-CSharp
         m_MethodName: OnProgressBarChanged
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
