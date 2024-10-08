@@ -109,6 +109,24 @@ public class ToggleAudioButton : MonoBehaviour
         }
     }
 
+    // Fast forward by 5 seconds
+    public void FastForward()
+    {
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.time = Mathf.Min(audioSource.time + 5f, audioSource.clip.length);
+        }
+    }
+
+    // Rewind by 5 seconds
+    public void Rewind()
+    {
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.time = Mathf.Max(audioSource.time - 5f, 0f);
+        }
+    }
+
     public void SkipForward()
     {
         if (isSkipping) return;
