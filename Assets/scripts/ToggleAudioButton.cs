@@ -228,5 +228,33 @@ public class ToggleAudioButton : MonoBehaviour
         }
     }
 
+    // Called when the app is paused (minimized or backgrounded)
+    void OnApplicationPause(bool isPaused)
+    {
+        if (isPaused)
+        {
+            // App is being minimized or backgrounded
+            Debug.Log("App is minimized or backgrounded");
+
+            // Ensure that audio continues playing in the background
+            if (isPlaying)
+            {
+                // Keep playing audio, so no action needed here
+                Debug.Log("Audio continues playing in the background.");
+            }
+        }
+        else
+        {
+            // App is resumed from the background
+            Debug.Log("App has resumed from the background");
+
+            // Resume audio if it was playing before minimization
+            if (wasPlayingBeforeMinimize)
+            {
+                PlayAudio();
+            }
+        }
+    }
+
 
 }
