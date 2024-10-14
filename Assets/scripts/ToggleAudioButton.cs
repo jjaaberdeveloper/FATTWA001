@@ -25,6 +25,7 @@ public class ToggleAudioButton : MonoBehaviour
     private bool isDragging = false;           // Tracks if the progress bar is being dragged
     private int currentTrackIndex = 0;         // Tracks the current playing track index
     private bool isSkipping = false;           // Prevents double skipping
+    private bool wasPlayingBeforeMinimize = false;   // Tracks if audio was playing before minimization
 
     void Start()
     {
@@ -202,5 +203,30 @@ public class ToggleAudioButton : MonoBehaviour
         playPauseButtonImage.sprite = playIcon;
         isPlaying = false;
     }
+
+    // Called when the app gains or loses focus
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (hasFocus)
+        {
+            // The app has focus, update UI or resume processes if needed
+            Debug.Log("App is in focus");
+
+            // Resume audio if it was playing before minimization
+            if (wasPlayingBeforeMinimize)
+            {
+                PlayAudio();
+            }
+        }
+        else
+        {
+            // The app has lost focus (minimized or switched to another app)
+            Debug.Log("App lost focus");
+
+            // Continue playing audio in the background (do nothing if the audio is playing)
+            wasPlayingBeforeMinimize = isPlaying; // Store the audio state
+        }
+    }
+
 
 }
