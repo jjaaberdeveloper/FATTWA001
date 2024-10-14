@@ -209,10 +209,7 @@ public class ToggleAudioButton : MonoBehaviour
     {
         if (hasFocus)
         {
-            // The app has focus, update UI or resume processes if needed
-            Debug.Log("App is in focus");
-
-            // Resume audio if it was playing before minimization
+            // The app has focus, resume audio if it was playing before minimization
             if (wasPlayingBeforeMinimize)
             {
                 PlayAudio();
@@ -221,10 +218,7 @@ public class ToggleAudioButton : MonoBehaviour
         else
         {
             // The app has lost focus (minimized or switched to another app)
-            Debug.Log("App lost focus");
-
-            // Continue playing audio in the background (do nothing if the audio is playing)
-            wasPlayingBeforeMinimize = isPlaying; // Store the audio state
+            wasPlayingBeforeMinimize = isPlaying;
         }
     }
 
@@ -234,24 +228,14 @@ public class ToggleAudioButton : MonoBehaviour
         if (isPaused)
         {
             // App is being minimized or backgrounded
-            Debug.Log("App is minimized or backgrounded");
-
-            // Ensure that audio continues playing in the background
-            if (isPlaying)
-            {
-                // Keep playing audio, so no action needed here
-                Debug.Log("Audio continues playing in the background.");
-            }
+            wasPlayingBeforeMinimize = isPlaying;  // Store the audio state
         }
         else
         {
-            // App is resumed from the background
-            Debug.Log("App has resumed from the background");
-
-            // Resume audio if it was playing before minimization
+            // App has resumed from background
             if (wasPlayingBeforeMinimize)
             {
-                PlayAudio();
+                PlayAudio();  // Resume audio if it was playing before minimization
             }
         }
     }
