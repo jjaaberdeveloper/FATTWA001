@@ -13,7 +13,7 @@ public class TogglePlayAllButton : MonoBehaviour
 
     void Start()
     {
-        Application.runInBackground = true;
+        
 
         // Get the Button component on this GameObject and add a listener to it
         GetComponent<Button>().onClick.AddListener(ToggleAudio);
